@@ -1,3 +1,3 @@
-[05-06-2026 02:02:55 Wordle-->run] Игра запущена
-[05-06-2026 02:02:55 WordleDictionaryLoader-->loadDict] загрузка словаря, файл: words_ru.txt
-[05-06-2026 02:02:55 WordleGame-->startGame] загадано слово: извод
+[06-06-2026 16:54:41 Wordle-->run] Игра запущена
+[06-06-2026 16:54:41 WordleDictionaryLoader-->loadDict] загрузка словаря, файл: words_ru.txt
+[06-06-2026 16:54:42 WordleGame-->startGame] загадано слово: талер

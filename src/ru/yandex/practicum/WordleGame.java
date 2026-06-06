@@ -79,37 +79,6 @@ public class WordleGame {
     return analyzeGuess(guess);
   }
 
-  private String analyzeGuess(String guess) {
-    int arrayLength = answer.length();
-    char[] result = new char[arrayLength];
-    char[] answerChars = answer.toCharArray();
-    char[] guessChars = guess.toCharArray();
-    boolean[] answerUsed = new boolean[arrayLength];
-
-    for (int i = 0; i < arrayLength; i++) {
-      if (guessChars[i] == answerChars[i]) {
-        result[i] = '+';
-        answerUsed[i] = true;
-      } else {
-        result[i] = '-';
-      }
-    }
-
-    for (int i = 0; i < arrayLength; i++) {
-      if (result[i] == '-') {
-        for (int j = 0; j < arrayLength; j++) {
-          if (!answerUsed[j] && guessChars[i] == answerChars[j]) {
-            result[i] = '^';
-            answerUsed[j] = true;
-            break;
-          }
-        }
-      }
-    }
-
-    return new String(result);
-  }
-
   public String getHint() {
 
     if (guesses.isEmpty()) {
@@ -235,5 +204,36 @@ public class WordleGame {
 
   public int getSteps() {
     return steps;
+  }
+
+  private String analyzeGuess(String guess) {
+    int arrayLength = answer.length();
+    char[] result = new char[arrayLength];
+    char[] answerChars = answer.toCharArray();
+    char[] guessChars = guess.toCharArray();
+    boolean[] answerUsed = new boolean[arrayLength];
+
+    for (int i = 0; i < arrayLength; i++) {
+      if (guessChars[i] == answerChars[i]) {
+        result[i] = '+';
+        answerUsed[i] = true;
+      } else {
+        result[i] = '-';
+      }
+    }
+
+    for (int i = 0; i < arrayLength; i++) {
+      if (result[i] == '-') {
+        for (int j = 0; j < arrayLength; j++) {
+          if (!answerUsed[j] && guessChars[i] == answerChars[j]) {
+            result[i] = '^';
+            answerUsed[j] = true;
+            break;
+          }
+        }
+      }
+    }
+
+    return new String(result);
   }
 }

@@ -62,8 +62,7 @@ public class WordleDictionaryLoader {
     if (word == null) {
       return "";
     }
-    String result = word.toLowerCase().trim().replace('ё', 'е');
-    return result;
+    return word.toLowerCase().trim().replace('ё', 'е');
   }
 }
 
